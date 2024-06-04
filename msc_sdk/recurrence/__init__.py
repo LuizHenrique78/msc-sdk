@@ -99,9 +99,6 @@ for recurrence in _recurrence_list:
                 discount_rate=_discount_rate,
                 discount_amount=total_discount_amount,
                 amount_due=ur["amount"] - total_discount_amount,
-                payment=[],
-                msc_customer=recurrence["msc_customer"],
-                msc_integrator = recurrence["msc_integrator"],
 
             )
         )
@@ -118,6 +115,10 @@ for recurrence in _recurrence_list:
             amount_paid=0 if _delta_days == 0 else total_amount - total_discount_amount,
             bank_account=_bank_account,
             created_at=datetime.now() - timedelta(days=_delta_days),
+            payments=[],
+            msc_customer=recurrence["msc_customer"],
+            msc_integrator=recurrence["msc_integrator"],
+            history=_history,
         )
     )
 
