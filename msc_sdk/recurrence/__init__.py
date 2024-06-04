@@ -99,6 +99,10 @@ for recurrence in _recurrence_list:
                 discount_rate=_discount_rate,
                 discount_amount=total_discount_amount,
                 amount_due=ur["amount"] - total_discount_amount,
+                payment=[],
+                msc_customer=recurrence["msc_customer"],
+                msc_integrator = recurrence["msc_integrator"],
+
             )
         )
 
