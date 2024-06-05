@@ -95,7 +95,7 @@ class RecurrenceReceivableUnit(BaseModel):
     def get_by_ur_id(cls, credential: Credential, ur_id: str, recurrence_id: str) -> Self:
         if ConfigSDK.get_config().environment == Environment.DEV:
             for rru in mock_data["rru_list"]:
-                if rru["ur_id"] == ur_id:
+                if rru["ur_id"]:
                     return cls(**rru)
 
         api_path = f"{recurrence_id}/receivable-units/{ur_id}"

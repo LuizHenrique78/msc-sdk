@@ -65,7 +65,7 @@ class Recurrence(BaseModel):
         ur_percentage: int,
         discount_rate_per_year: float,
         payment_scheme: list[PaymentScheme],
-        msc_integrator: str,
+        msc_integrator: str = None,
     ) -> Self:
         if ConfigSDK.get_config().environment == Environment.DEV:
             return cls(**mock_data["recurrence_list"][0])
